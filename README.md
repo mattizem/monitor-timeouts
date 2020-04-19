@@ -22,3 +22,8 @@ This will run the monitor script for 60 minutes with 192.168.1.1 as the target o
 
 ### Compatibility
 This script and the installation instructions has been tested on macOS running Bash version 3, Ubuntu Linux running Bash version 4, Synology DSM running Bash version 4.  I expect you can run this script and the installation instructions on most systems running Bash, without problems.  On some systems you might need to run the command with elevated rights (`sudo`).
+
+Please note that for older OS X (specifically tested on 10.11.6) the PING command needs target as last option.
+```
+ping -i 1 -c $pings $extraflag $target | grep -i "timeout\|unreachable\|no answer\|statistics\|transmitted\|avg"
+```
